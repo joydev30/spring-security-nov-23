@@ -1,5 +1,6 @@
 package com.authenticatedBackend.controller;
 
+import com.authenticatedBackend.model.LoginResponseDTO;
 import com.authenticatedBackend.model.User;
 //import com.authenticatedBackend.model.LoginResponseDTO;
 import com.authenticatedBackend.model.RegistrationDTO;
@@ -21,8 +22,8 @@ public class AuthenticationController {
         return authenticationService.registerUser(body.getUsername(), body.getPassword());
     }
     
-//    @PostMapping("/login")
-//    public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
-//        return authenticationService.loginUser(body.getUsername(), body.getPassword());
-//    }
+    @PostMapping("/login")
+    public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
+        return authenticationService.loginUser(body.getUsername(), body.getPassword());
+    }
 }   
